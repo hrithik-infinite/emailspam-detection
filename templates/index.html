@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email-Spam detection</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0mm;
+    }
+
+    header {
+      font-family: "Carter One", cursive;
+      /* text-align: center; */
+      margin: 0vh;
+      height: 10vh;
+      background-color: firebrick;
+
+    }
+
+    #heading {
+      color: white;
+      text-align: center;
+      font-size: 6vh;
+    }
+    #f1{
+      margin-top: 1.5vh;
+      align-items: center;
+      text-align: center;
+      font-family: "Roboto Condensed", sans-serif;
+
+    }
+
+    footer {
+      margin-top: 2.5vh;
+      font-size: 2.75vh;
+      font-family: "Roboto Condensed", sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="heading">SPAM CHECKER</h1>
+  </header>
+  <div id="f1">
+    <form action="{{ url_for ('subj')}}" method="POST">
+      <label for="sub class="c1">SUBJECT: </label>
+      <input type="text" class="c1" id="sub" name="sub" required="required"
+        placeholder="Enter Subject of Email" /><br><br>
+
+
+      <label for="body" class="c1">BODY: </label>
+      <input type="text" class="c1" id="bod" name="body" required="required" placeholder="Enter Body of Email" /><br><br>
+  
+  <input id="button" type="submit" value="Submit" /><br><br>
+  <div id="sub" class="c3">{{ ans }}</div></div><br>
+</form>
+</body>
+
+
+
+<footer>
+  <p>Made by Hrithik</p>
+  <a href="http://www.linkedin.com/in/hrithik-agarwal-b463531a1/">LinkedIn</a>
+</footer>
+</body>
+
+</html>
