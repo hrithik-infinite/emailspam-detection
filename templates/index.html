@@ -12,6 +12,7 @@
   <style>
     * {
       margin: 0mm;
+      /* background-color: #F8EDE3; */
     }
 
     header {
@@ -19,7 +20,7 @@
       /* text-align: center; */
       margin: 0vh;
       height: 10vh;
-      background-color: firebrick;
+      background-color: #A2B29F;
 
     }
 
@@ -35,9 +36,32 @@
       font-family: "Roboto Condensed", sans-serif;
 
     }
+    #sub{
+      height: 10vh;
+      width: 100vh;
+      align-items: center;
+    }
+    #bod{
+      height: 20vh;
+      width: 100vh;
+      align-items: center;
+    }
+    #button{
+      height: 8vh;
+      width: 25vh;
+      border-radius: 2vh;
+      background-color: #A2B29F;
+      font-size: 3vh;
+    }
+    #an{
+      font-size: 4.5vh;
+    }
+    .c1{
+      font-size: 4vh;
+    }
 
     footer {
-      margin-top: 2.5vh;
+      margin-top: 20vh;
       font-size: 2.75vh;
       font-family: "Roboto Condensed", sans-serif;
       text-align: center;
@@ -51,25 +75,26 @@
   </header>
   <div id="f1">
     <form action="{{ url_for ('subj')}}" method="POST">
-      <label for="sub class="c1">SUBJECT: </label>
-      <input type="text" class="c1" id="sub" name="sub" required="required"
+      <label for=sub class="c1">SUBJECT: </label>
+      <input type="text" class="" id="sub" name="sub" required="required"
         placeholder="Enter Subject of Email" /><br><br>
 
 
       <label for="body" class="c1">BODY: </label>
-      <input type="text" class="c1" id="bod" name="body" required="required" placeholder="Enter Body of Email" /><br><br>
+      <input type="text" class="box" id="bod" name="body" required="required" placeholder="Enter Body of Email" /><br><br>
   
   <input id="button" type="submit" value="Submit" /><br><br>
-  <div id="sub" class="c3">{{ ans }}</div></div><br>
+  <div id="an" class="c3">{{ ans }}</div></div><br>
 </form>
-</body>
-
-
 
 <footer>
   <p>Made by Hrithik</p>
   <a href="http://www.linkedin.com/in/hrithik-agarwal-b463531a1/">LinkedIn</a>
 </footer>
 </body>
+
+
+
+
 
 </html>
