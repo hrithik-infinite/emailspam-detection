@@ -1,6 +1,9 @@
 import pickle
 import string
-from nltk.corpus import stopwords
+# import nltk
+# nltk.download()
+# from nltk.corpus import stopwords
+from stop_words import get_stop_words
 from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
@@ -9,12 +12,12 @@ app = Flask(__name__)
 lem = pickle.load(open('lem.pkl','rb'))
 ps = pickle.load(open('pm.pkl','rb'))
 vect = pickle.load(open('vect.pkl','rb'))
-
+stopwords = get_stop_words('en')
 
 def func3(text):
     no_punc = [char for char in text if char not in string.punctuation]
     no_punc = ''.join(no_punc)
-    stop_words = [word for word in no_punc.split() if word not in stopwords.words('english')]
+    stop_words = [word for word in no_punc.split() if word not in stopwords]
     stem_words = [word for word in stop_words if ps.stem(word)]
     lem_words = [word for word in stem_words if lem.lemmatize(word)]
     str_words = [word for word in lem_words]
